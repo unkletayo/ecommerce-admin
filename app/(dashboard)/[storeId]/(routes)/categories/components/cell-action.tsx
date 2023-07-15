@@ -34,11 +34,11 @@ export const CellAction: React.FC<CellActionProp> = ({ data }) => {
   const onDelete = async () => {
     try {
       setLoading(true);
-      await axios.delete(`/api/${params.storeId}/billboards/${data.id}`);
+      await axios.delete(`/api/${params.storeId}/categories/${data.id}`);
       router.refresh();
-      toast.success('Billboard deleted.');
+      toast.success('Category deleted.');
     } catch (error) {
-      toast.error('Make sure you remove all categories using this billboard');
+      toast.error('Make sure you remove all product using this Category');
     } finally {
       setLoading(false);
       setOpen(false);
@@ -68,7 +68,7 @@ export const CellAction: React.FC<CellActionProp> = ({ data }) => {
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() =>
-              router.push(`/${params.storeId}/billboards/${data.id}`)
+              router.push(`/${params.storeId}/categories/${data.id}`)
             }
           >
             <Edit className="w-4 h-4 mr-2" />
