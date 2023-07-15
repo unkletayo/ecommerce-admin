@@ -16,7 +16,6 @@ export async function GET(_req: Request, { params }: {
         id: params.billboardId,
       },
     })
-
     return NextResponse.json(billboard)
 
   } catch (error) {
