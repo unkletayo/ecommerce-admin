@@ -18,6 +18,8 @@ export async function POST(
   req: Request,
   { params }: { params: { storeId: string } }
 ) {
+
+  console.log(params)
   const { productIds } = await req.json();
 
   if (!productIds || productIds.length === 0) {
